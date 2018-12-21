@@ -16,7 +16,7 @@ a
 
 .max_width
 {
-    max-width: 1280px;
+    max-width: 1260px;
     margin: auto;
 }
 
@@ -205,4 +205,78 @@ form input[type=text],input[type=email], input[type=date], select
     transform: skewY(175deg);
     position: relative;
     bottom: 150px;
+}
+
+/* PRESENTATION */
+
+.content_presentation
+{
+    position: relative;
+    bottom: 322px;
+}
+
+.presentation
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.how_work
+{
+    padding: 25px;
+}
+
+.how_work hr
+{
+    color: #252c5a;
+    float: left;
+    width: 300px;
+}
+
+.how_work h2
+{
+    padding: 0;
+    margin: 0;
+}
+
+.how_work li
+{
+    color: #fab0ad;
+}
+
+.how_work li p 
+{
+    color: #252c5a;
+}
+
+.violet
+{
+    color: #252c5a;
+    white-space: pre;
+}
+
+/* CONTENT */
+
+.content
+{
+    background: #fab0ad;
+}
+
+.membre_number
+{
+    text-align: center;
+}
+
+.membre_number .violet
+{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+/* FOOTER */
+
+footer
+{
+    background: #282c59;
+    color: #fff;
 }
