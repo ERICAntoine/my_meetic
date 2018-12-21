@@ -1,3 +1,6 @@
+<?php
+    include("fonction/user.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,24 +34,26 @@
                                     </div>
                                     <div class="who">
                                         <label class="log">Je suis un/une</label>
-                                        <select class="log">
-                                            <option>Un femme qui recherche un homme</option>
-                                            <option>Un homme qui recherche une femme</option>
+                                        <select name="sex" class="log">
+                                            <option value = "0">Un femme qui recherche un homme</option>
+                                            <option value = "1">Un homme qui recherche une femme</option>
+                                            <option value = "2">Un femme qui recherche une femme</option>
+                                            <option value = "3">Un homme qui recherche un homme</option>
                                         </select>
                                     </div>
                                     <div class="with">
                                             <label class="log">Je suis là pour</label>
-                                            <select class="log">
-                                                <option>Me faire de nouveaux amis</option>
-                                                <option>Trouver l'amour</option>
+                                            <select name= "relation" class="log">
+                                                <option value="0">Trouver l'amour</option>
+                                                <option value="1">Me faire de nouveaux amis</option>
                                             </select>
                                     </div>
                                     <div class="input">
-                                        <input class="log" type="text" placeholder="Nom" value="nom" >
-                                        <input class="log" type="text" placeholder="Prenom" value="prenom">
+                                        <input name="lastname" class="log" type="text" placeholder="Nom">
+                                        <input name="firstname" class="log" type="text" placeholder="Prenom">
                                     </div>
-                                    <input type="email" class="log" placeholder="Email" value="email">
-                                    <input type="date" class="log" value="date">
+                                    <input name = "email" type="email" class="log" placeholder="Email">
+                                    <input name= "date" type="date" class="log" value="date">
                                     <div class="submit">
                                         <input type="submit" class="log sub" value="Trouver l'amour aujourd'hui">
                                     </div>

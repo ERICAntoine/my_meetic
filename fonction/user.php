@@ -17,9 +17,13 @@ class User extends Connect
 
     public function insert()
     {
-        $insert = "INSERT INTO users (lastname, firstname, birthday, sex, city, email, password) VALUES ('".$this->lastname."', '".$this->firstname."', '".$this -> birthday."', '".$this -> sex."', '".$this -> city."', '".$this -> email."', '".$this -> password."')";
-        echo connect::$db_connect;
+        $db = Connect::connect();
+        echo $insert = "INSERT INTO users(lastname, firstname, birthday, sex, city, email, password) VALUES ('".$this->lastname."', '".$this->firstname."', '".$this -> birthday."', '".$this -> sex."', '".$this -> city."', '".$this -> email."', '".$this -> password."')";
+
     }
 }
 
+$user = new User($_POST["lastname"], $_POST["firstname"], $_POST["birthday"], $_POST["sex"], $_POST["city"], $_POST["email"], $_POST["password"]);
+$user -> insert();
+var_dump($_POST);
 ?>
