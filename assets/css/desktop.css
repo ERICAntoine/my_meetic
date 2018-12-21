@@ -5,6 +5,7 @@ body
     margin: auto;
     padding: 0;
     overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
 }
 
 a
@@ -38,7 +39,6 @@ ul
 header
 {
     background: url("../../images/motif2.jpeg");
-    height: 150px;
     background-position: center;
     background-size: contain;
 }
@@ -53,6 +53,12 @@ header
 .header_content
 {
     padding-top: 40px;
+    margin-bottom: 100px;
+}
+
+.content_login
+{
+    margin-bottom: 100px;
 }
 
 .header img
@@ -103,10 +109,100 @@ header
     text-transform: uppercase;
 }
 
+.heigher
+{
+    height: 150px;;
+}
+
+
 /* LOGIN */
 
 .login
 {
     padding: 10px;
     width: 500px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+form h2, form label
+{
+    color : #252c5a;
+}
+
+.star
+{
+    font-size: 14px;
+}
+
+form input[type=text],input[type=email], input[type=date], select
+{
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ededed;
+    outline: none;
+    background: #fff;
+    color: #acacac;
+}
+
+.log
+{
+    margin-bottom: 10px;
+}
+
+.with
+{
+    display: inline-grid;
+}
+
+.who
+{
+    display: inline-grid;
+}
+
+.inputs
+{
+    display: inline-grid;
+}
+
+.submit
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.sub
+{
+    background-color: #282c59;
+    border: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+.image_pres
+{
+    float: right;
+    position: absolute;
+    left: 60%;
+    top: 29%;
+}
+
+.image_pres img
+{
+    height: 700px;
+}
+
+/* DIAGONAL */
+
+.diagonal
+{
+    height: 235px;
+    background: #fff;
+    transform: skewY(175deg);
+    position: relative;
+    bottom: 150px;
 }
