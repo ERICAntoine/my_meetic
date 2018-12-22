@@ -137,7 +137,7 @@ form h2, form label
     font-size: 14px;
 }
 
-form input[type=text],input[type=email], input[type=date], select
+form input[type=text],input[type=email], input[type=date], select,input[type=password]
 {
     padding: 10px;
     border-radius: 5px;
@@ -195,6 +195,13 @@ form input[type=text],input[type=email], input[type=date], select
 {
     height: 700px;
 }
+
+.errors
+{
+    color: red;
+    font-size: 10px;
+}
+
 
 /* DIAGONAL */
 

@@ -27,25 +27,32 @@
                 </div>
                 <aside class="content_login max_width">
                     <div class="login">
-                        <form method="post" class="form_login">
+                        <form name="register" method="post" class="form_login">
                             <div class="inputs">
                                     <div class="title_login log">
                                         <h2>Meet <span class="rose">Big & Cute</span> Love here.<span class="star">*</span></h2>
+                                        <?php if (isset($_POST) && !empty($_POST)): ?>
+                                            <?php if ($errors): ?>
+                                                <?php foreach ($errors as $value): ?>
+                                                    <span class="errors"><?=$value?></span> <br/>
+                                                <?php endforeach; ?>
+                                            <?php endif ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="who">
                                         <label class="log">Je suis un/une</label>
                                         <select name="sex" class="log">
-                                            <option value = "0">Un femme qui recherche un homme</option>
-                                            <option value = "1">Un homme qui recherche une femme</option>
-                                            <option value = "2">Un femme qui recherche une femme</option>
-                                            <option value = "3">Un homme qui recherche un homme</option>
+                                            <option value = "1">Une femme qui recherche un homme</option>
+                                            <option value = "2">Un homme qui recherche une femme</option>
+                                            <option value = "3">Une femme qui recherche une femme</option>
+                                            <option value = "4">Un homme qui recherche un homme</option>
                                         </select>
                                     </div>
                                     <div class="with">
                                             <label class="log">Je suis là pour</label>
                                             <select name= "relation" class="log">
-                                                <option value="0">Trouver l'amour</option>
-                                                <option value="1">Me faire de nouveaux amis</option>
+                                                <option value="1">Trouver l'amour</option>
+                                                <option value="2">Me faire de nouveaux amis</option>
                                             </select>
                                     </div>
                                     <div class="input">
@@ -53,9 +60,11 @@
                                         <input name="firstname" class="log" type="text" placeholder="Prenom">
                                     </div>
                                     <input name = "email" type="email" class="log" placeholder="Email">
-                                    <input name= "date" type="date" class="log" value="date">
+                                    <input name= "birthday" type="date" class="log">
+                                    <input name= "city" type="text" class="log" placeholder="Ville">
+                                    <input name= "password" type="password" class="log" placeholder="Mot de Passe">
                                     <div class="submit">
-                                        <input type="submit" class="log sub" value="Trouver l'amour aujourd'hui">
+                                        <input id="submit" name= "submit" type="submit" class="log sub" value="Trouver l'amour aujourd'hui">
                                     </div>
                                     
                                 </div>
@@ -105,6 +114,6 @@
             <span>© Copyright 2018 Ericleplusbeau Corporation</span>
         </div>
     </footer>
-    <script src="assets/js/"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 </html>
