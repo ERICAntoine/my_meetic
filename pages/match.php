@@ -1,7 +1,6 @@
 <?php
     session_start();
     include("../poo/call/matchcall.php");
-    a
 ?>
 
 <!DOCTYPE html>
