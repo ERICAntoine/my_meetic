@@ -1,5 +1,5 @@
 <?php
-    include("../poo/class/user.php");
+   include("../class/user.php");
 
     if(isset($_POST) && !empty($_POST))
     {
@@ -11,7 +11,15 @@
 
         if(empty($errors))
         {
-            header("Location: personal.php");
+            $c = array("Success");
+            $json = json_encode($c);
+            echo $json;
+            //header("Location: ../../pages/personal.php");
+        }
+        else
+        {
+            $e = json_encode($errors);
+            echo $e;
         }
     }
 ?>

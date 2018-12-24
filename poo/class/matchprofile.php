@@ -1,5 +1,5 @@
 <?php
-    include("connect.php");
+    include_once("connect.php");
 
     class MatchProfile extends Connect
     {
@@ -7,7 +7,7 @@
         {
             $db = Connect::connect();
             $id = $_SESSION['id'];
-            $users = "SELECT lastname, firstname FROM users WHERE id != $id";
+            $users = "SELECT id, lastname, firstname FROM users WHERE id != $id";
             $usersResquest = $db -> prepare($users);
             $usersResquest -> execute();
             return $usersResquest;

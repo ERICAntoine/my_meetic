@@ -1,7 +1,7 @@
 <?php
 class Connect
 {
-    protected function connect()
+    public function connect()
     {
         $server = "localhost";
         $dbname= "lovestory";

@@ -1,8 +1,6 @@
 <?php
 
-include("connect.php");
-session_start();
-
+include_once("connect.php");
 class User extends Connect
 {
     function __construct($post)
@@ -116,6 +114,7 @@ class Validate extends Connect
         {
             if(password_verify($password, $check["password"]))
             {
+                session_start();
                 $_SESSION["id"] = $check["id"];
                 $_SESSION["lastname"] = $check["lastname"];
                 $_SESSION["firstname"] = $check["firstname"];

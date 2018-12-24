@@ -1,6 +1,3 @@
-<?php
-    include("../poo/call/connexioncall.php");
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,16 +32,10 @@
                     <div class="inputs">
                             <div class="title_login log">
                                 <h2>Meet <span class="rose">Big & Cute</span> Love here.<span class="star">*</span></h2>
-                                <?php if (isset($_POST) && !empty($_POST)): ?>
-                                    <?php if ($errors): ?>
-                                        <?php foreach ($errors as $value): ?>
-                                            <span class="errors"><?=$value?></span> <br/>
-                                        <?php endforeach; ?>
-                                    <?php endif ?>
-                                <?php endif ?>
+                            <div id = "resultat"></div>
                             </div>
-                            <input name = "email" type="email" class="log" placeholder="Email">
-                            <input name= "password" type="password" class="log" placeholder="Mot de Passe">
+                            <input id = "email" name = "email" type="email" class="log" placeholder="Email">
+                            <input  id = "password" name= "password" type="password" class="log" placeholder="Mot de Passe">
                             <div class="submit">
                                 <input id="submit" name= "submit" type="submit" class="log sub" value="Connecte toi">
                             </div>
@@ -54,7 +45,12 @@
                 </div>
             </aside>
     </div>
-   
-    <script src="assets/js/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="../poo/call/connexion.js"></script>
 </body>
 </html>
+
+<?php
+    include("../poo/call/connexioncall.php");
+?>

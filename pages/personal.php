@@ -1,6 +1,5 @@
 <?php
-    include("../poo/call/connexioncall.php");
-    var_dump($_SESSION);
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +35,7 @@
                         <?php if (!empty($_SESSION)): ?>
                             <h2><?=$_SESSION["lastname"] ." ".  $_SESSION["firstname"]?></h2>
                         <p>Presentation</p>
-                        <a href="chat.php/?id=<?=$_SESSION["id"]?>">Chatter</a>
+                        <a class="btn-chat" href="chat.php/?id=<?=$_SESSION["id"]?>">Chatter</a>
                         <?php endif ?>
                     </div>
                 </div>

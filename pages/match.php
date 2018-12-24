@@ -1,6 +1,6 @@
 <?php
-    include("../poo/call/connexioncall.php");
-    var_dump($_SESSION);
+    session_start();
+    include("../poo/call/matchcall.php");
 ?>
 
 <!DOCTYPE html>
@@ -30,17 +30,16 @@
             </div>
         </header>
         <div class="content">
-            <div class="content_card max_width">
-                <div class="card">
-                    <div class="image_card"></div>
-                    <div class="info_card">
-                        <?php if (!empty($_SESSION)): ?>
-                            <h2><?=$_SESSION["lastname"] ." ".  $_SESSION["firstname"]?></h2>
-                        <p>Presentation</p>
-                        <a href="chat.php/?id=<?=$_SESSION["id"]?>">Chatter</a>
-                        <?php endif ?>
-                    </div>
-                </div>
+            <div class="content_card max_width">                        
+                <?php while($usersMatch = $users -> fetch(PDO::FETCH_ASSOC)){ ?>
+                    <div class="card">
+                        <div class="image_card"></div>
+                        <div class="info_card">
+                            <h2><?= $usersMatch["lastname"]?></h2>
+                            <a class="btn-chat" href="chat.php?chatWith=<?=$usersMatch["id"]?>">Chatter</a>
+                        </div>
+                    </div>                            
+                <?php } ?>
             </div>
         </div>
         <footer>
