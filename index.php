@@ -1,5 +1,5 @@
 <?php
-    include("fonction/user.php");
+    include("poo/call/indexcall.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>LoveStory</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/desktop.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/desktop/desktopIndex.css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,800" rel="stylesheet">
 </head>
 <body>
@@ -18,11 +18,11 @@
                 <div class="header_content max_width">
                     <img src="images/logo-header.png"/>
                     <ul>
-                        <li>Trouver L'amour</li>
+                        <li><a href="index.php">Trouver L'amour</a></li>
                         <li>Matcher avec les Profiles</li>
-                        <li>Pourquoi nous ?</li>
                         <li>Histoire vrai</li>
                         <li>Contact</li>
+                        <li><a href="pages/connexion.php">Connexion</a></li>
                     </ul>
                 </div>
                 <aside class="content_login max_width">

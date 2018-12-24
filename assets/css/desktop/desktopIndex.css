@@ -1,0 +1,289 @@
+/* GENERAL */
+
+body
+{
+    margin: auto;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a
+{
+    color: inherit;
+    text-decoration: none;
+}
+
+.max_width
+{
+    max-width: 1260px;
+    margin: auto;
+}
+
+h1
+{
+    padding: 0;
+    margin: 0;
+}
+
+ul
+{
+    list-style: none;
+    padding: 0;
+}
+
+
+/* HEADER */
+
+
+header
+{
+    background: url("../../../images/motif2.jpeg");
+    background-position: center;
+    background-size: contain;
+}
+
+.header
+{
+    height: 100%;
+
+    background: linear-gradient(to top, rgba(250, 176, 173, 0.75) 100%, rgba(250, 176, 173, 0.2));
+}
+
+.header_content
+{
+    padding-top: 40px;
+    margin-bottom: 100px;
+}
+
+.content_login
+{
+    margin-bottom: 100px;
+}
+
+.header img
+{
+    width: 300px;
+}
+
+.header ul
+{
+    display: flex;
+    float: right;
+    background-color: #282c59;
+    padding: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: relative;
+    bottom: 15px;
+}
+
+.header ul::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    width: calc((100vw - 1280px) / 2);
+    background-color: #282c59;
+}
+
+.header li
+{
+    color: #8588b8;
+    border-right: 1px #333 solid; 
+    padding-right: 20px;
+    padding-left: 20px
+}
+
+.header li:hover
+{
+    color: #fff;
+    transition: 0.5s;
+}
+
+.title_login .rose
+{
+    color: #faafaa;
+    text-transform: uppercase;
+}
+
+.heigher
+{
+    height: 150px;;
+}
+
+
+/* LOGIN */
+
+.login
+{
+    padding: 10px;
+    width: 500px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+form h2, form label
+{
+    color : #252c5a;
+}
+
+.star
+{
+    font-size: 14px;
+}
+
+form input[type=text],input[type=email], input[type=date], select,input[type=password]
+{
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ededed;
+    outline: none;
+    background: #fff;
+    color: #acacac;
+}
+
+.log
+{
+    margin-bottom: 10px;
+}
+
+.with
+{
+    display: inline-grid;
+}
+
+.who
+{
+    display: inline-grid;
+}
+
+.inputs
+{
+    display: inline-grid;
+}
+
+.submit
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.sub
+{
+    background-color: #282c59;
+    border: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+.image_pres
+{
+    float: right;
+    position: absolute;
+    left: 60%;
+    top: 29%;
+}
+
+.image_pres img
+{
+    height: 700px;
+}
+
+.errors
+{
+    color: red;
+    font-size: 10px;
+}
+
+
+/* DIAGONAL */
+
+.diagonal
+{
+    height: 235px;
+    background: #fff;
+    transform: skewY(175deg);
+    position: relative;
+    bottom: 150px;
+}
+
+/* PRESENTATION */
+
+.content_presentation
+{
+    position: relative;
+    bottom: 322px;
+}
+
+.presentation
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.how_work
+{
+    padding: 25px;
+}
+
+.how_work hr
+{
+    color: #252c5a;
+    float: left;
+    width: 300px;
+}
+
+.how_work h2
+{
+    padding: 0;
+    margin: 0;
+}
+
+.how_work li
+{
+    color: #fab0ad;
+}
+
+.how_work li p 
+{
+    color: #252c5a;
+}
+
+.violet
+{
+    color: #252c5a;
+    white-space: pre;
+}
+
+/* CONTENT */
+
+.content
+{
+    background: #fab0ad;
+}
+
+.membre_number
+{
+    text-align: center;
+}
+
+.membre_number .violet
+{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+/* FOOTER */
+
+footer
+{
+    background: #282c59;
+    color: #fff;
+}

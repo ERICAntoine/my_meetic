@@ -6,6 +6,10 @@ body
     padding: 0;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
+    background: url("../../../images/motif2.jpeg");
+    background-position: center;
+    background-size: contain;
+    height: 100vh;
 }
 
 a
@@ -32,22 +36,24 @@ ul
     padding: 0;
 }
 
-
 /* HEADER */
 
-
-header
-{
-    background: url("../../images/motif2.jpeg");
-    background-position: center;
-    background-size: contain;
-}
-
-.header
+.filter
 {
     height: 100%;
-
     background: linear-gradient(to top, rgba(250, 176, 173, 0.75) 100%, rgba(250, 176, 173, 0.2));
+}
+
+.header ul
+{
+    display: flex;
+    float: right;
+    background-color: #282c59;
+    padding: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: relative;
+    bottom: 15px;
 }
 
 .header_content
@@ -58,7 +64,9 @@ header
 
 .content_login
 {
-    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
 }
 
 .header img
@@ -85,7 +93,7 @@ header
     top: 0;
     left: 100%;
     height: 100%;
-    width: calc((100vw - 1280px) / 2);
+    width: calc((100vw - 1260px) / 2);
     background-color: #282c59;
 }
 
@@ -108,12 +116,6 @@ header
     color: #faafaa;
     text-transform: uppercase;
 }
-
-.heigher
-{
-    height: 150px;;
-}
-
 
 /* LOGIN */
 
@@ -183,107 +185,36 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
     border-radius: 25px;
 }
 
-.image_pres
-{
-    float: right;
-    position: absolute;
-    left: 60%;
-    top: 29%;
-}
-
-.image_pres img
-{
-    height: 700px;
-}
-
 .errors
 {
     color: red;
     font-size: 10px;
 }
 
-
-/* DIAGONAL */
-
-.diagonal
-{
-    height: 235px;
-    background: #fff;
-    transform: skewY(175deg);
-    position: relative;
-    bottom: 150px;
-}
-
-/* PRESENTATION */
-
-.content_presentation
-{
-    position: relative;
-    bottom: 322px;
-}
-
-.presentation
-{
-    display: flex;
-    justify-content: space-between;
-}
-
-.how_work
-{
-    padding: 25px;
-}
-
-.how_work hr
-{
-    color: #252c5a;
-    float: left;
-    width: 300px;
-}
-
-.how_work h2
-{
-    padding: 0;
-    margin: 0;
-}
-
-.how_work li
-{
-    color: #fab0ad;
-}
-
-.how_work li p 
-{
-    color: #252c5a;
-}
-
-.violet
-{
-    color: #252c5a;
-    white-space: pre;
-}
-
 /* CONTENT */
 
 .content
 {
-    background: #fab0ad;
+    background-color: #fff;
 }
 
-.membre_number
+.content_card
 {
-    text-align: center;
+    padding: 15px;
 }
 
-.membre_number .violet
+.card
 {
-    font-size: 25px;
-    font-weight: 700;
+    background-color: #f1f1f1;
+    display: flex;
+    padding: 15px;
+    border-radius: 20px;
 }
 
-/* FOOTER */
-
-footer
+.card a
 {
-    background: #282c59;
+    background-color: #282c59;
     color: #fff;
+    padding: 10px;
+    border-radius: 20px;
 }
