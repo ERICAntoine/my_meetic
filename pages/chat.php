@@ -1,8 +1,9 @@
-<?php 
-?>
-
 <?php
     include("../poo/call/connexioncall.php");
+    if(empty($_SESSION))
+    {
+        header("Location: connexion.php");
+    }
 ?>
 <!DOCTYPE html>
 <html>

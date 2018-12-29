@@ -13,8 +13,14 @@
     }
     elseif($_GET["choose"] != "All" && $_GET["age_min"] != "" && $_GET["age_max"] != "" && $_GET["city"] != "")
     {
-      
+      $users = $match -> allFilter();
     }
+    else
+    {
+      $users = $match -> filter();
+    }
+
+
   //$match ->cookieCity();
   //var_dump($_COOKIE);
 ?>

@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if(empty($_SESSION))
+    {
+        header("Location: connexion.php");
+    }
 ?>
 <!DOCTYPE html>
 <html>

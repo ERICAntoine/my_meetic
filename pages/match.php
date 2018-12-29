@@ -1,6 +1,10 @@
 <?php
     session_start();
     include("../poo/call/matchcall.php");
+    if(empty($_SESSION))
+    {
+        header("Location: connexion.php");
+    }
 ?>
 
 <!DOCTYPE html>

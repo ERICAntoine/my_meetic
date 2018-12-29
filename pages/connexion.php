@@ -1,6 +1,5 @@
 <?php
     include("../poo/call/connexioncall.php");
-    var_dump($_POST);
 ?>
 
 <!DOCTYPE html>
