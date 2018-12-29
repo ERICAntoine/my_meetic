@@ -11,7 +11,6 @@ $(document).ready(function(){
             },
             function(data){
 
-                console.log(data);
                 if(data == 'Success')
                 {
                     window.location.href = "personal.php";

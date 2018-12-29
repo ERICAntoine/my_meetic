@@ -1,5 +1,3 @@
-/* GENERAL */
-
 body
 {
     margin: auto;
@@ -36,7 +34,7 @@ ul
     padding: 0;
 }
 
-form input[type=text],input[type=email], input[type=date], select,input[type=password]
+form input[type=text],input[type=email], input[type=date], select,input[type=password], input[type=number]
 {
     padding: 10px;
     border-radius: 5px;
@@ -44,6 +42,8 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
     outline: none;
     background: #fff;
     color: #acacac;
+    max-width: 135px;
+    margin-top: 10px;
 }
 
 /* HEADER */
@@ -127,3 +127,77 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
     text-transform: uppercase;
 }
 
+/* CONTENT */
+
+.content
+{
+    background-color: #fff;
+}
+
+.content_card
+{
+    padding: 15px;
+}
+
+.profiles
+{
+    border-radius: 15px;
+    margin-left: 7px;
+    padding: 15px;
+}
+
+
+.card
+{
+    background-color: #f1f1f1 !important;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.btn-chat
+{
+    background-color: #282c59;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* SEARCH */
+
+.filter_search
+{
+    background-color: #f1f1f1;
+    padding: 25px;
+    border-radius: 15px;
+}
+.age_inputs
+{
+    display: flex;
+}
+
+.age_inputs input
+{
+    width: 65px;
+    margin-right: 10px;
+}
+
+.city
+{
+    white-space: pre-line;
+}
+
+.btn_filter
+{
+    margin-top: 20px;
+}
+
+.sub
+{
+    background-color: #282c59;
+    border: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 25px;
+    
+}
