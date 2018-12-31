@@ -201,3 +201,21 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
     border-radius: 25px;
     
 }
+
+.display
+{
+    display: none;
+}
+
+.carousel
+{
+    display: flex;
+    align-items: center;
+}
+
+img.arrow
+{
+    width: 15px;
+    height: 20px;
+    cursor: pointer;
+}

@@ -39,6 +39,23 @@
                 <div class="content_card">
                     <div class="row">
                         <div class="col-2 filter_search">
+                            <div class="carousel">
+                                <img class="arrow" id="arrowBack" src="../images/back.svg">
+                                <?php while($usersMatch = $users -> fetch(PDO::FETCH_ASSOC)){ ?>
+                                    <?php $u[] = $usersMatch?>
+                                    <div class="cards display">
+                                        <div class="card">
+                                            <img class="card-img-top">
+                                            <div class="info_card">
+                                                <h5 class="card_title"><?= $usersMatch["firstname"]?></h5>
+                                                <?= $usersMatch["city"]?>
+                                                <a class="btn-chat" href="chat.php?chatWith=<?=$usersMatch["id"]?>">Discuter</a>
+                                            </div>
+                                        </div>  
+                                    </div>                          
+                                <?php } ?>
+                                <img class="arrow" id="arrowNext" src="../images/next.svg">
+                            </div>
                             <form method="get">
                                 <div class="search_title">
                                     <h5>Search</h5>
@@ -72,7 +89,7 @@
                         </div>
                         <div class="col-9 profiles">
                             <div class="flex-row row">
-                                <?php while($usersMatch = $users -> fetch(PDO::FETCH_ASSOC)){ ?>
+                                <?php foreach($u as $usersMatch):?>
                                     <div class="col-sm-3 cards">
                                         <div class="card">
                                             <img class="card-img-top">
@@ -83,7 +100,7 @@
                                             </div>
                                         </div>  
                                     </div>                          
-                                <?php } ?>
+                                <?php endforeach ?>
                             </div>
                         </div>
                     </div>  
@@ -99,8 +116,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
-
-
+    <script src="../assets/js/carousel.js""></script>
 </body>
 </html>
 

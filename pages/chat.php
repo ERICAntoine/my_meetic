@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("../poo/call/connexioncall.php");
     if(empty($_SESSION))
     {
