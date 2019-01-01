@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include("../poo/call/upload.php");
     if(empty($_SESSION))
     {
         header("Location: connexion.php");
@@ -38,9 +38,13 @@
                     <div class="info_card">
                         <?php if (!empty($_SESSION)): ?>
                             <h2><?=$_SESSION["lastname"] ." ".  $_SESSION["firstname"]?></h2>
-                        <p>Presentation</p>
-                        <a class="btn-chat" href="chat.php/?id=<?=$_SESSION["id"]?>">Chatter</a>
+                            <p>Presentation</p>
+                            <a class="btn-chat" href="chat.php/?id=<?=$_SESSION["id"]?>">Chatter</a>
                         <?php endif ?>
+                        <form id="upload" method="post"  enctype="multipart/form-data" >
+                            <input id="image_upload" name="image" type="file">
+                            <input id="submit" name="sub" type="submit">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -51,6 +55,11 @@
             </div>
         </footer>
     </div>
-<script src="assets/js/index.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="../assets/js/index.js"></script>
+    <script src="../assets/js/UpImage.js"></script>
 </body>
 </html>
