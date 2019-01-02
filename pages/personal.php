@@ -34,17 +34,26 @@
         <div class="content">
             <div class="content_card max_width">
                 <div class="card">
-                    <div class="image_card"></div>
+                    <?php if(file_exists("../userImages/" . $_SESSION['id'] . '_' . $_SESSION['lastname'] . '_' . $_SESSION['firstname'] . '/profil.jpg')):?>
+                        <div class="image_card">
+                            <img class="card-img" src="../userImages/<?= $_SESSION["id"] . "_" . $_SESSION["lastname"] . "_" . $_SESSION["firstname"] . "/profil.jpg"?>">
+                        </div>
+                    <?php endif ?>
+                    <?php if(!file_exists("../userImages/" . $_SESSION['id'] . '_' . $_SESSION['lastname'] . '_' . $_SESSION['firstname'] . '/profil.jpg')):?>
+                        <label for="image_upload">
+                            <img src="../images/user.png" alt="caca">
+                        </label>
+                        <form id="upload" method="post"  enctype="multipart/form-data" >
+                            <input id="image_upload" name="image" type="file" style= "display: none">
+                            <input id="submit" name="sub" type="submit">
+                        </form>
+                    <?php endif ?>
                     <div class="info_card">
                         <?php if (!empty($_SESSION)): ?>
                             <h2><?=$_SESSION["lastname"] ." ".  $_SESSION["firstname"]?></h2>
                             <p>Presentation</p>
                             <a class="btn-chat" href="chat.php/?id=<?=$_SESSION["id"]?>">Chatter</a>
                         <?php endif ?>
-                        <form id="upload" method="post"  enctype="multipart/form-data" >
-                            <input id="image_upload" name="image" type="file">
-                            <input id="submit" name="sub" type="submit">
-                        </form>
                     </div>
                 </div>
             </div>

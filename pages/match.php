@@ -92,7 +92,12 @@
                                 <?php foreach($u as $usersMatch):?>
                                     <div class="col-sm-3 cards">
                                         <div class="card">
-                                            <img class="card-img-top">
+                                        <?php if(file_exists("../userImages/" . $usersMatch['id'] . '_' . $usersMatch['lastname'] . '_' . $usersMatch['firstname'] . '/profil.jpg')):?>
+                                            <img class="card-img" src="../userImages/<?= $usersMatch["id"] . "_" . $usersMatch["lastname"] . "_" . $usersMatch["firstname"] . "/profil.jpg"?>">
+                                        <?php endif ?>
+                                        <?php if(!file_exists("../userImages/" . $usersMatch['id'] . '_' . $usersMatch['lastname'] . '_' . $usersMatch['firstname'] . '/profil.jpg')):?>
+                                            <img class="card-img-top" src="../images/man-user.png">
+                                        <?php endif ?>
                                             <div class="info_card">
                                                 <h5 class="card_title"><?= $usersMatch["firstname"]?></h5>
                                                 <?= $usersMatch["city"]?>

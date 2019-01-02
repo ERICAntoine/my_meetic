@@ -218,3 +218,14 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
     padding: 10px;
     border-radius: 20px;
 }
+
+.image_card img
+{
+    width: 350px;
+    height: 350px;
+}
+
+.info_card
+{
+    padding-left: 20px;
+}
