@@ -35,7 +35,13 @@ $(document).ready(function(e){
             data: { chatWith : $("#receiver").val() },
             success: function(data)
             {
-                console.log(data);
+                //console.log(data.length);
+                for(var i = 0; i < data.length; i++)
+                {
+                    $(".recent").append("<span class='message'>"+ data[i]["content"] +"</span><br/>");
+
+                    console.log(data[i]["content"]);
+                }
             }
         })
     }

@@ -41,7 +41,9 @@
                         caca
                     </div>
                     <div class="messages">
-                        caca
+                        <div class="recent">
+                            
+                        </div>
                         <form id="messager" method="post">
                             <input id="message" type="text">
                             <input type="submit"> 
