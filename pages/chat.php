@@ -34,8 +34,23 @@
                 </div>
             </div>
         </header>
+        <div class="content">
+            <div class="max_width content_message">
+                <div class="chat">
+                    <div class="chatwith">
+                        caca
+                    </div>
+                    <div class="messages">
+                        caca
+                        <form method="post">
+                            <input type="text">
+                            <input type="submit"> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-   
-    <script src="assets/js/index.js"></script>
+    <script src="../assets/js/chat.js"></script>
 </body>
 </html>

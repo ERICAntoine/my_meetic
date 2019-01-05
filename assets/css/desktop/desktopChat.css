@@ -127,3 +127,27 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
     text-transform: uppercase;
 }
 
+/* CHAT */
+
+
+.chat
+{
+    background: #fff;
+    display: flex;
+}
+
+.chatwith
+{
+    width: 35%;
+    border-right: 2px solid #faafaa;
+}
+
+.messages
+{
+    width: 65%;
+}
+
+.chat
+{
+    border-radius: 20px;
+}
