@@ -1,9 +1,5 @@
 <?php
     session_start();
-    var_dump($_SESSION);
-    var_dump($_GET);
-
-
 
 $server = "localhost";
 $dbname= "lovestory";
@@ -14,7 +10,7 @@ $db = new PDO("mysql:host=$server; dbname=$dbname", $username, $password);
 function postMessage($post)
 {
     global $db;
-    
+
     $receiver = $_GET["chatWith"];
     $author = $_SESSION["id"];
     $resquest = "INSERT INTO messages (author, receiver, content, create_at) VALUES ($author, $receiver, '$post', NOW())";

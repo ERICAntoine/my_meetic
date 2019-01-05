@@ -139,7 +139,10 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
 .chatwith
 {
     width: 35%;
-    border-right: 2px solid #faafaa;
+    background: #faafaa;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 10px;
 }
 
 .messages

@@ -16,12 +16,7 @@ $(document).ready(function(e){
                     }
                     else
                     {
-                        const errors = data;
-                        $("#resultat").empty();
-                        $.each(errors, function(i,value)
-                        {
-                            $("#resultat").append(`<span class="errors">${value}</span><br/>`);
-                        });
+                        alert(data);
                     }  
                 },
             });
@@ -31,4 +26,19 @@ $(document).ready(function(e){
             console.log(errors);
         }
     });
+
+    function getMessages()
+    {
+        $.ajax({
+            url: "../poo/call/messengercall.php",
+            dataType: "json",
+            data: { chatWith : $("#receiver").val() },
+            success: function(data)
+            {
+                console.log(data);
+            }
+        })
+    }
+
+    setInterval(getMessages(), 3000);
 })
