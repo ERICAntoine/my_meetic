@@ -1,6 +1,6 @@
 <?php
+    //include("../poo/call/messageinsert.php");
     session_start();
-    include("../poo/call/connexioncall.php");
     if(empty($_SESSION))
     {
         header("Location: connexion.php");
@@ -42,15 +42,19 @@
                     </div>
                     <div class="messages">
                         caca
-                        <form method="post">
-                            <input type="text">
+                        <form id="messager" method="post">
+                            <input id="message" type="text">
                             <input type="submit"> 
+                            <input id="receiver" type="hidden" value=<?= $_GET["chatWith"]?>>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
     <script src="../assets/js/chat.js"></script>
 </body>
 </html>
