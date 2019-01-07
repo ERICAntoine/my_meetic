@@ -221,11 +221,25 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
 
 .image_card img
 {
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    border-radius: 200px;
+    height: 250px;
 }
 
 .info_card
 {
     padding-left: 20px;
+}
+
+
+.grid-container {
+    display: grid;
+}
+
+.grid-container--fill {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid-container--fit {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }

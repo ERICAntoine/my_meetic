@@ -1,5 +1,27 @@
 <?php
     include("poo/call/indexcall.php");
+    /*require_once "Faker/src/autoload.php";
+    $faker = Faker\Factory::create();
+    $server = "localhost";
+    $dbname= "lovestory";
+    $username = "eric";
+    $password= "159100";
+    $db = new PDO("mysql:host=$server; dbname=$dbname", $username, $password);
+
+    foreach(range(1,100) as $x)
+    {
+        $firstname =  $faker ->firstname;
+        $lastname = $faker ->lastname;
+        $date = $faker ->date($format = 'Y-m-d', $max = "1999-12-31");
+        $number = $faker ->numberBetween($min =  1, $max = 4);
+        $city = $faker ->city;
+        $email = $faker ->email;
+        $pass = $faker ->password;
+        $number2 = $faker ->numberBetween($min =  1, $max = 2);
+        $resquest = "INSERT INTO users(lastname, firstname, birthday, sex, city, email, password,id_relation) VALUES ('$firstname', '$lastname', '$date', '$number', '$city', '$email', '$pass', $number2)";
+        $db ->query($resquest);
+    }
+*/
 ?>
 <!DOCTYPE html>
 <html>

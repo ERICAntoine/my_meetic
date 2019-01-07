@@ -1,5 +1,10 @@
 $(document).ready(function(e)
 {
+    $("#image_upload").change(function(e)
+    {
+        $("#upload").submit();    
+    });
+
     $("#upload").submit(function(e)
     {
         e.preventDefault();

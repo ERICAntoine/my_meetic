@@ -150,7 +150,6 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
 .card
 {
     background-color: #f1f1f1 !important;
-    padding: 15px;
     border-radius: 20px;
     margin-bottom: 10px;
 }
@@ -218,4 +217,9 @@ img.arrow
     width: 15px;
     height: 20px;
     cursor: pointer;
+}
+
+.info_card
+{
+    padding: 15px;
 }

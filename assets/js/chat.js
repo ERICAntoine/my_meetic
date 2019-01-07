@@ -35,12 +35,18 @@ $(document).ready(function(e){
             data: { chatWith : $("#receiver").val() },
             success: function(data)
             {
-                //console.log(data.length);
                 for(var i = 0; i < data.length; i++)
                 {
-                    $(".recent").append("<span class='message'>"+ data[i]["content"] +"</span><br/>");
+                    if(data[i]["receiver"] == $("#receiver").val())
+                    {
+                        $(".recent").append("<span class='my message'>"+ data[i]["content"] +"</span><br/>");
+                    }
+                    else
+                    {
+                        $(".recent").append("<span class='receiver message'>"+ data[i]["content"] +"</span><br/>");
 
-                    console.log(data[i]["content"]);
+                    }
+                    console.log(data[i]);
                 }
             }
         })

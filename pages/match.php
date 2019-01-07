@@ -87,10 +87,10 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-9 profiles">
+                        <div class="grid-container grid-container--fill profiles">
                             <div class="flex-row row">
                                 <?php foreach($u as $usersMatch):?>
-                                    <div class="col-sm-3 cards">
+                                    <div class="grid-element cards">
                                         <div class="card">
                                         <?php if(file_exists("../userImages/" . $usersMatch['id'] . '_' . $usersMatch['lastname'] . '_' . $usersMatch['firstname'] . '/profil.jpg')):?>
                                             <img class="card-img" src="../userImages/<?= $usersMatch["id"] . "_" . $usersMatch["lastname"] . "_" . $usersMatch["firstname"] . "/profil.jpg"?>">
@@ -100,7 +100,7 @@
                                         <?php endif ?>
                                             <div class="info_card">
                                                 <h5 class="card_title"><?= $usersMatch["firstname"]?></h5>
-                                                <?= $usersMatch["city"]?>
+                                                <p><?= $usersMatch["city"]?></p>
                                                 <a class="btn-chat" href="chat.php?chatWith=<?=$usersMatch["id"]?>">Discuter</a>
                                             </div>
                                         </div>  

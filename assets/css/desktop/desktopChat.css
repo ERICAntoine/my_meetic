@@ -154,3 +154,26 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
 {
     border-radius: 20px;
 }
+
+.recent
+{
+    padding: 17px;
+    height: 300px;
+    overflow: auto;
+}
+
+.my
+{
+    float: right;
+    background-color: #282c59;
+    color: #fff;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.receiver
+{
+    background-color: #faafaa;
+    color: #fff;
+    padding: 5px;
+}
