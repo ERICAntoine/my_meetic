@@ -22,16 +22,5 @@ $(document).ready(function(e)
                 console.log(data);
             }
         })
-
-        /*$.post(
-            "../poo/call/upload.php",
-            {
-                image : $("#image_upload").val(),
-            },
-            function(data)
-            {
-                console.log(data);
-            }
-        )*/
     })
 })

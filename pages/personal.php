@@ -42,7 +42,6 @@
                         </label>
                         <form id="upload" method="post"  enctype="multipart/form-data" >
                             <input id="image_upload" name="image" type="file" style= "display: none">
-                            <input id="submit" name="sub" type="submit">
                         </form>
                     <?php endif ?>
                     <?php if(!file_exists("../userImages/" . $_SESSION['id'] . '_' . $_SESSION['lastname'] . '_' . $_SESSION['firstname'] . '/profil.jpg')):?>
@@ -51,7 +50,6 @@
                         </label>
                         <form id="upload" method="post"  enctype="multipart/form-data" >
                             <input id="image_upload" name="image" type="file" style= "display: none">
-                            <input id="submit" name="sub" type="submit">
                         </form>
                     <?php endif ?>
                     <div class="info_card">

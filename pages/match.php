@@ -92,10 +92,11 @@
                                 <?php foreach($u as $usersMatch):?>
                                     <div class="grid-element cards">
                                         <div class="card">
-                                        <?php if(file_exists("../userImages/" . $usersMatch['id'] . '_' . $usersMatch['lastname'] . '_' . $usersMatch['firstname'] . '/profil.jpg')):?>
-                                            <img class="card-img" src="../userImages/<?= $usersMatch["id"] . "_" . $usersMatch["lastname"] . "_" . $usersMatch["firstname"] . "/profil.jpg"?>">
+                                        <?php $path = "../userImages/" . $usersMatch['id'] . '_' . $usersMatch['lastname'] . '_' . $usersMatch['firstname'];?>
+                                        <?php if(file_exists($path . '/profil.jpg')):?>
+                                            <img class="card-img" src="<?= $path . "/profil.jpg"?>">
                                         <?php endif ?>
-                                        <?php if(!file_exists("../userImages/" . $usersMatch['id'] . '_' . $usersMatch['lastname'] . '_' . $usersMatch['firstname'] . '/profil.jpg')):?>
+                                        <?php if(!file_exists($path . '/profil.jpg')):?>
                                             <img class="card-img-top" src="../images/man-user.png">
                                         <?php endif ?>
                                             <div class="info_card">
