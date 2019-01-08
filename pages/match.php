@@ -5,6 +5,8 @@
     {
         header("Location: connexion.php");
     }
+
+    echo $nbrPage;
 ?>
 
 <!DOCTYPE html>
@@ -107,6 +109,17 @@
                                         </div>  
                                     </div>                          
                                 <?php endforeach ?>
+                                <?php
+                                    $choose = $_GET["choose"];
+                                    $age_min = $_GET["age_min"];
+                                    $age_max = $_GET["age_max"];
+                                    $city = $_GET["city"];
+                                ?>
+                                <?php for($i = 1; $i < $nbrPage; $i++): ?>
+                                    <ul class='pagination pagi'>
+                                        <li class='page-item'><a class='page-link' href= <?= 'match.php?choose='.$choose. '&age_min='. $age_min. '&age_max='.$age_max .'&city=' . $city . '&page=' . $i?>><?=$i?></a></li>;
+                                    </ul>
+                                <?php endfor ?>
                             </div>
                         </div>
                     </div>  

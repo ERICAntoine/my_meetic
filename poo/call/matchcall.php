@@ -6,6 +6,7 @@
     if(empty($_GET))
     {
       $users = $match -> selectUsers();
+      $nbrPage = $match -> selectUsers(false);
     }
     elseif($_GET["choose"] == "All" && $_GET["age_min"] == "" && $_GET["age_max"] == "" && $_GET["city"] == "")
     {

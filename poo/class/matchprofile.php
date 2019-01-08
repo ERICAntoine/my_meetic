@@ -8,18 +8,49 @@
             $this -> get = $get;
         }
 
-        public function selectUsers()
+        public function selectUsers($bool = true)
         {
+            $nbrLimit = 12;
+            if(isset($this->get["page"]))
+            {
+                $page = $this->get["page"];
+            }
+            else
+            {
+                $page = 1;
+            }
+
+            if($bool != true)
+            {
+                $db = Connect::connect();
+                $id = $_SESSION['id'];
+                $users = "SELECT id, lastname, firstname, city FROM users WHERE id != $id";
+                $usersResquest = $db -> prepare($users);
+                $usersResquest -> execute();
+                $total = $usersResquest-> rowCount();
+                $nbrPage = ceil($total / $nbrLimit);
+                return $nbrPage;
+            }
+
             $db = Connect::connect();
             $id = $_SESSION['id'];
-            $users = "SELECT id, lastname, firstname, city FROM users WHERE id != $id";
+            $users = "SELECT id, lastname, firstname, city FROM users WHERE id != $id limit " . ($page - 1)*$nbrLimit . "," . $nbrLimit;
             $usersResquest = $db -> prepare($users);
             $usersResquest -> execute();
             return $usersResquest;
         }
 
-        public function allFilter()
+        public function allFilter($bool = true)
         {
+            if(isset($this->get["page"]))
+            {
+                $page = $this->get["page"];
+            }
+            else
+            {
+                $page = 1;
+            }
+
             $db = Connect::connect();
             $id = $_SESSION["id"];
             $lowDate = MatchProfile::convertAgeToDate($this ->get["age_min"]) . "\n";
@@ -51,8 +82,17 @@
             }
         }
 
-        public function filter()
-        {
+        public function filter($bool = true)
+        {    
+            if(isset($this->get["page"]))
+            {
+                $page = $this->get["page"];
+            }
+            else
+            {
+                $page = 1;
+            }
+
             $db = Connect::connect();
             $id = $_SESSION['id'];
             $lowDate = MatchProfile::convertAgeToDate($this ->get["age_min"]);
@@ -110,6 +150,9 @@
             }
             $usersResquest = $db -> prepare($users);
             $usersResquest -> execute();
+
+            $usersResquest2 = $db -> prepare($users);
+            $usersResquest2 -> execute();
             return $usersResquest;
         }
 
