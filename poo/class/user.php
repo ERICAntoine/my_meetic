@@ -107,7 +107,7 @@ class Validate extends Connect
         $db = Connect::connect();
         $email = $this ->post["email"];
         $password = $this -> post["password"];
-        $checkUser = $db -> prepare("SELECT id, lastname, firstname, email, password FROM users WHERE email = '$email'");
+        $checkUser = $db -> prepare("SELECT id, lastname, firstname, email, birthday, city, password FROM users WHERE email = '$email'");
         $checkUser -> execute();
 
         while($check = $checkUser -> fetch(PDO::FETCH_ASSOC))
@@ -118,6 +118,10 @@ class Validate extends Connect
                 $_SESSION["id"] = $check["id"];
                 $_SESSION["lastname"] = $check["lastname"];
                 $_SESSION["firstname"] = $check["firstname"];
+                $_SESSION["email"] = $check["email"];
+                $_SESSION["birthday"] = $check["birthday"];
+                $_SESSION["city"] = $check["city"];
+
                 return true;
             }
             else

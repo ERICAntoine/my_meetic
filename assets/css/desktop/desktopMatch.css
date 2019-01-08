@@ -144,6 +144,7 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
     border-radius: 15px;
     margin-left: 7px;
     padding: 15px;
+    width: 915px;
 }
 
 
@@ -222,4 +223,14 @@ img.arrow
 .info_card
 {
     padding: 15px;
+}
+
+.grid-element {
+    margin-right: 40px;
+    margin-left: 20px;
+}
+
+.card-img
+{
+    width: 240px !important;
 }

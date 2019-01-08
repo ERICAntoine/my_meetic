@@ -1,9 +1,11 @@
 <?php
     include("../poo/call/upload.php");
+    include("../poo/call/personalcall.php");
     if(empty($_SESSION))
     {
         header("Location: connexion.php");
     }
+    $_POST["id"] = $_SESSION["id"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,7 +42,7 @@
                                 <img class="card-img" src="../userImages/<?= $_SESSION["id"] . "_" . $_SESSION["lastname"] . "_" . $_SESSION["firstname"] . "/profil.jpg"?>">
                             </div>
                         </label>
-                        <form id="upload" method="post"  enctype="multipart/form-data" >
+                        <form id="upload" method="post" enctype="multipart/form-data" >
                             <input id="image_upload" name="image" type="file" style= "display: none">
                         </form>
                     <?php endif ?>
@@ -53,12 +55,30 @@
                         </form>
                     <?php endif ?>
                     <div class="info_card">
-                        <?php if (!empty($_SESSION)): ?>
-                            <h2><?=$_SESSION["lastname"] ." ".  $_SESSION["firstname"]?></h2>
-                            <p>Presentation</p>
-                            <a class="btn-chat" href="chat.php/?id=<?=$_SESSION["id"]?>">Chatter</a>
-                        <?php endif ?>
+                        <h2><?=$_SESSION["lastname"] ." ".  $_SESSION["firstname"]?></h2>
+                        <form>
+                            <textarea></textarea>
+                            <button class="btn-chat">Ajoutez Presentation</button>
+                        </form>
+                            <!--<a class="btn-chat" href="chat.php/?id=<?=$_SESSION["id"]?>">Chatter</a>-->
                     </div>
+                </div>
+                <div class="card">
+                    <form method="post" class="form_change" >
+                        <label>Change LastName</label>
+                        <input type="text" name="lastname" value=<?= $_SESSION["lastname"]?>>
+                        <label>Change Firstname</label>
+                        <input type="text" name="firstname" value=<?= $_SESSION["firstname"]?>>
+                        <label>Change Email</label>
+                        <input type="email"  name="email" value=<?= $_SESSION["email"]?>>
+                        <label>Change Date</label>
+                        <input type="date" name="date" value=<?= $_SESSION["birthday"]?>>
+                        <label>Change City</label>
+                        <input type="text" name="city" value=<?= $_SESSION["city"]?>>
+                        <label>Change Password</label>
+                        <input type="password" name="password">
+                        <input type="submit" class="btn-chat">
+                    </form>
                 </div>
             </div>
         </div>

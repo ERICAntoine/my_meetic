@@ -87,7 +87,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="grid-container grid-container--fill profiles">
+                        <div class="profiles">
                             <div class="flex-row row">
                                 <?php foreach($u as $usersMatch):?>
                                     <div class="grid-element cards">

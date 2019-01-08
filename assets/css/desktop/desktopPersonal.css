@@ -209,6 +209,8 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
     display: flex;
     padding: 15px;
     border-radius: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
 .btn-chat
@@ -217,6 +219,8 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
     color: #fff;
     padding: 10px;
     border-radius: 20px;
+    border: none;
+    outline: none;
 }
 
 .image_card img
@@ -229,6 +233,33 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
 .info_card
 {
     padding-left: 20px;
+    width: 60%;
+}
+
+.info_card textarea
+{
+    width: 85%;
+    border-radius: 15px;
+    outline: none;
+    padding: 12px;
+}
+
+.info_card button
+{
+    border: none;
+    outline: none;
+    display: block;
+    margin-top: 20px;
+}
+
+.form_change
+{
+    display: grid !important;
+}
+
+.form_change .btn-chat
+{
+    margin-top: 10px;
 }
 
 
