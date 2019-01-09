@@ -177,3 +177,39 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
     color: #fff;
     padding: 5px;
 }
+
+.talk
+{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.profil_image
+{
+    width: 50px;
+    margin-right: 20px;
+}
+
+.info
+{
+    width: 100%;
+}
+
+.info h5
+{
+    padding: 0;
+    margin: 0;
+}
+
+.info p
+{
+    padding: 0;
+    margin: 0;
+}
+
+hr
+{
+    border-color: #282c59;
+    width: 70%;
+}

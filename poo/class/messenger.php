@@ -19,5 +19,16 @@
             $message -> execute();
             return $message;
         }
+
+        public function getProfiles()
+        {
+            $db = Connect::connect();
+            $idSession = $this ->session["id"];
+            $receiver = $this->get["chatWith"];
+            $resquest = "SELECT receiver, users.lastname, users.firstname, content FROM messages INNER JOIN users ON messages.receiver = users.id WHERE users.id = $receiver ORDER BY content DESC";
+            $message = $db -> prepare($resquest);
+            $message -> execute();
+            return $message;
+        }
     }
 ?>

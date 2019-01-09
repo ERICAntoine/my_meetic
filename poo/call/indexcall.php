@@ -21,4 +21,10 @@
             $user -> insert();
         }
     }
+
+    $count = new User($_POST);
+    $total = $count-> countUsers();
+
+
+
 ?>

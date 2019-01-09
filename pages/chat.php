@@ -1,6 +1,6 @@
 <?php
-    //include("../poo/call/messageinsert.php");
     session_start();
+    include("../poo/call/insertProfilesChat.php");
     if(empty($_SESSION))
     {
         header("Location: connexion.php");
@@ -25,10 +25,9 @@
                         <img src="../images/logo-header.png"/>
                         <ul>
                             <li><a href="../index.php">Trouver L'amour</a></li>
-                            <li>Matcher avec les Profiles</li>
-                            <li>Pourquoi nous ?</li>
-                            <li>Histoire vrai</li>
-                            <li>Contact</li>
+                            <li><a href="match.php">Matcher avec les Profiles</a></li>
+                            <li><a href="personal.php">Mon profil</a></li>
+                            <li><a href="logout.php">Deconnexion</a></li>
                         </ul>
                     </div>
                 </div>
@@ -38,7 +37,21 @@
             <div class="max_width content_message">
                 <div class="chat">
                     <div class="chatwith">
-                        caca
+                        <?php while($donnes = $allProfil->fetch(PDO::FETCH_ASSOC)):?>
+                            <div class="talk">
+                                <?php if(file_exists("../userImages/ ". $donnes["receiver"] ."/profil.jpg")):?>
+                                    <img src=<?= "../userImages/ ". $donnes["receiver"] ."/profil.jpg"?>
+                                <?php endif ?>
+                                <?php if(!file_exists("../userImages/ ". $donnes["receiver"] ."/profil.jpg")):?>
+                                    <img class="profil_image" src=<?= "../images/user.png" ?>>
+                                <?php endif ?>
+                                <div class="info">
+                                    <h5><?= $donnes["lastname"]. " " .$donnes["firstname"]?></h5>
+                                    <p><?= $donnes["content"]?></p>
+                                </div>
+                            </div>
+                            <hr/>
+                        <?php endwhile?>
                     </div>
                     <div class="messages">
                         <div class="recent">

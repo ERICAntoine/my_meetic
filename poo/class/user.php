@@ -16,6 +16,16 @@ class User extends Connect
         $insertUser = $db -> prepare($insert);
         $insertUser -> execute();
     }
+
+    function countUsers()
+    {
+        $db = Connect::connect();
+        $resquest = "SELECT COUNT(id) AS total FROM users";
+        $count = $db -> prepare($resquest);
+        $count -> execute();
+        $total = $count -> fetch(PDO::FETCH_ASSOC);
+        return $total["total"];
+    }
 }
 
 class Validate extends Connect

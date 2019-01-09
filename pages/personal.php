@@ -1,6 +1,7 @@
 <?php
     include("../poo/call/upload.php");
     include("../poo/call/personalcall.php");
+    var_dump($_SESSION);
     if(empty($_SESSION))
     {
         header("Location: connexion.php");
@@ -9,14 +10,14 @@
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>LoveStory</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" media="screen" href="../assets/css/desktop/desktopPersonal.css" />
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,800" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>LoveStory</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/desktop/desktopPersonal.css" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,800" rel="stylesheet">
+    </head>
 <body>
         <div class="filter">
         <header>
@@ -26,8 +27,8 @@
                         <img src="../images/logo-header.png"/>
                         <ul>
                             <li><a href="match.php">Matcher avec les Profiles</a></li>
-                            <li>Parametre</li>
-                            <li>Deconnexion</li>
+                            <li><a href="personal.php">Mon profil</a></li>
+                            <li><a href="logout.php">Deconnexion</a></li>
                         </ul>
                     </div>
                 </div>
@@ -36,17 +37,17 @@
         <div class="content">
             <div class="content_card max_width">
                 <div class="card">
-                    <?php if(file_exists("../userImages/" . $_SESSION['id'] . '_' . $_SESSION['lastname'] . '_' . $_SESSION['firstname'] . '/profil.jpg')):?>
+                    <?php if(file_exists("../userImages/" . $_SESSION['id'] . '/profil.jpg')):?>
                         <label for="image_upload">
                             <div class="image_card">
-                                <img class="card-img" src="../userImages/<?= $_SESSION["id"] . "_" . $_SESSION["lastname"] . "_" . $_SESSION["firstname"] . "/profil.jpg"?>">
+                                <img class="card-img" src="../userImages/<?= $_SESSION["id"] ."/profil.jpg"?>">
                             </div>
                         </label>
                         <form id="upload" method="post" enctype="multipart/form-data" >
                             <input id="image_upload" name="image" type="file" style= "display: none">
                         </form>
                     <?php endif ?>
-                    <?php if(!file_exists("../userImages/" . $_SESSION['id'] . '_' . $_SESSION['lastname'] . '_' . $_SESSION['firstname'] . '/profil.jpg')):?>
+                    <?php if(!file_exists("../userImages/" . $_SESSION['id'] . '/profil.jpg')):?>
                         <label for="image_upload">
                             <img class="card-img" src="../images/user.png" alt="caca">
                         </label>

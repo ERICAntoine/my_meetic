@@ -29,8 +29,8 @@
                         <img src="../images/logo-header.png"/>
                         <ul>
                             <li><a href="match.php">Matcher avec les Profiles</a></li>
-                            <li>Parametre</li>
-                            <li>Deconnexion</li>
+                            <li><a href="personal.php">Mon profil</a></li>
+                            <li><a href="logout.php">Deconnexion</a></li>
                         </ul>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                                 <?php foreach($u as $usersMatch):?>
                                     <div class="grid-element cards">
                                         <div class="card">
-                                        <?php $path = "../userImages/" . $usersMatch['id'] . '_' . $usersMatch['lastname'] . '_' . $usersMatch['firstname'];?>
+                                        <?php $path = "../userImages/" . $usersMatch['id'];?>
                                         <?php if(file_exists($path . '/profil.jpg')):?>
                                             <img class="card-img" src="<?= $path . "/profil.jpg"?>">
                                         <?php endif ?>
@@ -110,17 +110,27 @@
                                     </div>                          
                                 <?php endforeach ?>
                                 <?php
+                                if(isset($_GET) && !empty($_GET))
+                                {
                                     $choose = $_GET["choose"];
                                     $age_min = $_GET["age_min"];
                                     $age_max = $_GET["age_max"];
                                     $city = $_GET["city"];
+                                }
                                 ?>
-                                <?php for($i = 1; $i < $nbrPage; $i++): ?>
-                                    <ul class='pagination pagi'>
-                                        <li class='page-item'><a class='page-link' href= <?= 'match.php?choose='.$choose. '&age_min='. $age_min. '&age_max='.$age_max .'&city=' . $city . '&page=' . $i?>><?=$i?></a></li>;
-                                    </ul>
-                                <?php endfor ?>
                             </div>
+                            <ul class='pagination pagi'>
+                                <?php if(!empty($_GET)):?>
+                                    <?php for($i = 1; $i < $nbrPage + 1; $i++): ?>
+                                        <li class='page-item'><a class='page-link' href= <?= 'match.php?choose='.$choose. '&age_min='. $age_min. '&age_max='.$age_max .'&city=' . $city . '&page=' . $i?>><?=$i?></a></li>
+                                    <?php endfor ?>
+                                <?php endif ?>
+                                <?php if(empty($_GET)):?>
+                                    <?php for($i = 1; $i < $nbrPage + 1; $i++): ?>
+                                        <li class='page-item'><a class='page-link' href= <?= 'match.php?page=' . $i?>><?=$i?></a></li>
+                                    <?php endfor ?>
+                                <?php endif ?>
+                            </ul>
                         </div>
                     </div>  
                 </div>

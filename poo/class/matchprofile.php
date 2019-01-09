@@ -20,6 +20,14 @@
                 $page = 1;
             }
 
+            if(!empty($this->get) && isset($_GET))
+            {
+                $city = $this->get["city"];
+                $sex = $this ->get["choose"];
+                $ageMin = MatchProfile::check($this->get["age_min"]);
+                $ageMax = MatchProfile::check($this->get["age_max"]);
+            }
+
             if($bool != true)
             {
                 $db = Connect::connect();
@@ -51,6 +59,7 @@
                 $page = 1;
             }
 
+            $nbrLimit = 12;
             $db = Connect::connect();
             $id = $_SESSION["id"];
             $lowDate = MatchProfile::convertAgeToDate($this ->get["age_min"]) . "\n";
@@ -65,7 +74,17 @@
             {
                 $users = "SELECT id, lastname, firstname, city FROM users WHERE id != $id AND (birthday >= '$upDate' AND birthday <= '$lowDate') AND (sex = 2 OR sex = 4) AND (city = '$city')";
             }
-            $usersResquest = $db -> prepare($users);
+
+            if($bool != true)
+            {
+                $usersResquest = $db -> prepare($users);
+                $usersResquest -> execute();
+                $total = $usersResquest-> rowCount();
+                $nbrPage = ceil($total / $nbrLimit);
+                return $nbrPage;
+            }
+
+            $usersResquest = $db -> prepare($users . "limit " . ($page - 1)*$nbrLimit . "," . $nbrLimit);
             $usersResquest -> execute();
             return $usersResquest;
         }
@@ -93,6 +112,7 @@
                 $page = 1;
             }
 
+            $nbrLimit = 12;
             $db = Connect::connect();
             $id = $_SESSION['id'];
             $lowDate = MatchProfile::convertAgeToDate($this ->get["age_min"]);
@@ -148,11 +168,18 @@
             {
                 $users = "SELECT id, lastname, firstname, city FROM users WHERE id != $id AND (city = '$city')";
             }
-            $usersResquest = $db -> prepare($users);
-            $usersResquest -> execute();
 
-            $usersResquest2 = $db -> prepare($users);
-            $usersResquest2 -> execute();
+            if($bool != true)
+            {
+                $usersResquest = $db -> prepare($users);
+                $usersResquest -> execute();
+                $total = $usersResquest-> rowCount();
+                $nbrPage = ceil($total / $nbrLimit);
+                return $nbrPage;
+            }
+
+            $usersResquest = $db -> prepare($users . "limit " . ($page - 1)*$nbrLimit . "," . $nbrLimit);
+            $usersResquest -> execute();
             return $usersResquest;
         }
 

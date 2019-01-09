@@ -272,12 +272,20 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
 .membre_number
 {
     text-align: center;
+    display: grid;
 }
 
 .membre_number .violet
 {
     font-size: 25px;
     font-weight: 700;
+}
+
+.total
+{
+    color: #252c5a;
+    font-size: 125px;
+    font-weight: 500;
 }
 
 /* FOOTER */

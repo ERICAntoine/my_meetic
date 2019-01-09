@@ -41,9 +41,6 @@
                     <img src="images/logo-header.png"/>
                     <ul>
                         <li><a href="index.php">Trouver L'amour</a></li>
-                        <li>Matcher avec les Profiles</li>
-                        <li>Histoire vrai</li>
-                        <li>Contact</li>
                         <li><a href="pages/connexion.php">Connexion</a></li>
                     </ul>
                 </div>
@@ -128,6 +125,7 @@
     </section>
     <div class="content">
         <div class="membre_number max_width">
+            <span class="total"><?= $total ?></span>
             <span class="violet">personnes on sautez le pas !</span>
         </div>
     </div>

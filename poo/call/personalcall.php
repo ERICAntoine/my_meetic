@@ -3,4 +3,5 @@
 
     $occ = new Personals($_POST);
     $occ -> updateInfo();
+    $occ -> refresh();
 ?>
