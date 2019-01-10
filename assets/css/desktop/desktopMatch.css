@@ -239,6 +239,41 @@ img.arrow
 .pagination
 {
     position: absolute;
-    bottom: 0;
+    bottom: -40px;
     left: 47%;
+    width: 11.3%;
+    overflow: hidden;
+}
+
+@media(max-width: 1200px)
+{
+    .col-2
+    {
+        max-width: 100% !important;
+        flex: none !important;
+    }
+
+    .looking_for , .age , .city , .btn_filter
+    {
+        width: max-content;
+    }
+
+    .all_filter
+    {
+        display: grid;
+        justify-content: center;
+    }
+
+    .age
+    {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .city
+    {
+        display: flex;
+        align-items: baseline;
+    }
+
 }

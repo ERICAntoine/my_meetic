@@ -20,19 +20,11 @@
                 $page = 1;
             }
 
-            if(!empty($this->get) && isset($_GET))
-            {
-                $city = $this->get["city"];
-                $sex = $this ->get["choose"];
-                $ageMin = MatchProfile::check($this->get["age_min"]);
-                $ageMax = MatchProfile::check($this->get["age_max"]);
-            }
-
             if($bool != true)
             {
                 $db = Connect::connect();
                 $id = $_SESSION['id'];
-                $users = "SELECT id, lastname, firstname, city FROM users WHERE id != $id";
+                $users = "SELECT id, lastname, firstname, city FROM users WHERE id != $id AND email IS NOT NULL";
                 $usersResquest = $db -> prepare($users);
                 $usersResquest -> execute();
                 $total = $usersResquest-> rowCount();
@@ -42,7 +34,7 @@
 
             $db = Connect::connect();
             $id = $_SESSION['id'];
-            $users = "SELECT id, lastname, firstname, city FROM users WHERE id != $id limit " . ($page - 1)*$nbrLimit . "," . $nbrLimit;
+            $users = "SELECT id, lastname, firstname, city FROM users WHERE id != $id AND email IS NOT NULL limit " . ($page - 1)*$nbrLimit . "," . $nbrLimit;
             $usersResquest = $db -> prepare($users);
             $usersResquest -> execute();
             return $usersResquest;
@@ -121,7 +113,8 @@
             $sex = $this ->get["choose"];
             $ageMin = MatchProfile::check($this->get["age_min"]);
             $ageMax = MatchProfile::check($this->get["age_max"]);
-            $cityCheck = MatchProfile::check($this->get["city"]); 
+            $cityCheck = MatchProfile::check($this->get["city"]);
+            
 
             if($sex && $ageMin && $ageMax)
             {

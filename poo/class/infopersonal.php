@@ -52,6 +52,7 @@
                 $resquest = "UPDATE users SET lastname= NULL, firstname = NULL , email= NULL, sex= NULL, birthday= NULL, city= NULL,password= NULL, id_relation = NULL WHERE id=$id";
                 $update = $db -> prepare($resquest);
                 $update -> execute();
+                unlink("../userImages/". $id."/profil.jpg");
                 rmdir("../userImages/" . $id);
                 //header("Location: logout.php");
             }

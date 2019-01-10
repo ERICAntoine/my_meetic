@@ -6,7 +6,6 @@
         header("Location: connexion.php");
     }
 
-    echo $nbrPage;
 ?>
 
 <!DOCTYPE html>
@@ -110,7 +109,7 @@
                                     </div>                          
                                 <?php endforeach ?>
                                 <?php
-                                if(isset($_GET) && !empty($_GET))
+                                if(count($_GET) > 1)
                                 {
                                     $choose = $_GET["choose"];
                                     $age_min = $_GET["age_min"];
@@ -120,12 +119,12 @@
                                 ?>
                             </div>
                             <ul class='pagination pagi'>
-                                <?php if(!empty($_GET)):?>
+                                <?php if(count($_GET) > 1):?>
                                     <?php for($i = 1; $i < $nbrPage + 1; $i++): ?>
                                         <li class='page-item'><a class='page-link' href= <?= 'match.php?choose='.$choose. '&age_min='. $age_min. '&age_max='.$age_max .'&city=' . $city . '&page=' . $i?>><?=$i?></a></li>
                                     <?php endfor ?>
                                 <?php endif ?>
-                                <?php if(empty($_GET)):?>
+                                <?php if(empty($_GET) || isset($_GET["page"])):?>
                                     <?php for($i = 1; $i < $nbrPage + 1; $i++): ?>
                                     <li class='page-item'><a class='page-link' href= <?= 'match.php?page=' . $i?>><?=$i?></a></li>
 
