@@ -253,7 +253,7 @@ img.arrow
         flex: none !important;
     }
 
-    .looking_for , .age , .city , .btn_filter
+    .looking_for , .age , .city , .btn_filter, .search_title
     {
         width: max-content;
     }
@@ -276,4 +276,25 @@ img.arrow
         align-items: baseline;
     }
 
+    .btn_filter
+    {
+        margin-left: 45px;
+    }
+
+    .carousel
+    {
+        justify-content: center;
+    }
+
+    .flex-row
+    {
+        display: flex;
+        justify-content: center;
+    }
+
+    .search_title
+    {
+        position: relative;
+        left: 45%;
+    }
 }
