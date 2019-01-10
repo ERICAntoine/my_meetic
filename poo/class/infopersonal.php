@@ -45,14 +45,15 @@
 
         public function deleteAccount()
         {
-            if($_GET["delete"])
+            if(isset($_GET["delete"]) && !empty($_GET["delete"]))
             {
                 $db = Connect::connect();
                 $id = $_SESSION["id"];
-                $resquest = "UPDATE users SET lastname= NULL, firstname = NULL , email= NULL, birthday= NULL, city= NULL WHERE id=$id";
+                $resquest = "UPDATE users SET lastname= NULL, firstname = NULL , email= NULL, sex= NULL, birthday= NULL, city= NULL,password= NULL, id_relation = NULL WHERE id=$id";
                 $update = $db -> prepare($resquest);
                 $update -> execute();
-                header("Location: logout.php");
+                rmdir("../userImages/" . $id);
+                //header("Location: logout.php");
             }
         }
     }

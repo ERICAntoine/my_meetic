@@ -50,7 +50,7 @@
                                             <img class="card-img-top">
                                             <div class="info_card">
                                                 <h5 class="card_title"><?= $usersMatch["firstname"]?></h5>
-                                                <?= $usersMatch["city"]?>
+                                                <p><?= $usersMatch["city"]?></p>
                                                 <a class="btn-chat" href="chat.php?chatWith=<?=$usersMatch["id"]?>">Discuter</a>
                                             </div>
                                         </div>  
@@ -127,7 +127,8 @@
                                 <?php endif ?>
                                 <?php if(empty($_GET)):?>
                                     <?php for($i = 1; $i < $nbrPage + 1; $i++): ?>
-                                        <li class='page-item'><a class='page-link' href= <?= 'match.php?page=' . $i?>><?=$i?></a></li>
+                                    <li class='page-item'><a class='page-link' href= <?= 'match.php?page=' . $i?>><?=$i?></a></li>
+
                                     <?php endfor ?>
                                 <?php endif ?>
                             </ul>

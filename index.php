@@ -8,7 +8,7 @@
     $password= "159100";
     $db = new PDO("mysql:host=$server; dbname=$dbname", $username, $password);
 
-    foreach(range(1,100) as $x)
+    foreach(range(1,1000) as $x)
     {
         $firstname =  $faker ->firstname;
         $lastname = $faker ->lastname;
