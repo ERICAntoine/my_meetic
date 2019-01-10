@@ -42,5 +42,18 @@
                 $_SESSION["city"] = $r["city"];
             }
         }
+
+        public function deleteAccount()
+        {
+            if($_GET["delete"])
+            {
+                $db = Connect::connect();
+                $id = $_SESSION["id"];
+                $resquest = "UPDATE users SET lastname= NULL, firstname = NULL , email= NULL, birthday= NULL, city= NULL WHERE id=$id";
+                $update = $db -> prepare($resquest);
+                $update -> execute();
+                header("Location: logout.php");
+            }
+        }
     }
 ?>

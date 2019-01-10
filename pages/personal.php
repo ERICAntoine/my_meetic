@@ -1,7 +1,6 @@
 <?php
     include("../poo/call/upload.php");
     include("../poo/call/personalcall.php");
-    var_dump($_SESSION);
     if(empty($_SESSION))
     {
         header("Location: connexion.php");
@@ -79,6 +78,14 @@
                         <label>Change Password</label>
                         <input type="password" name="password">
                         <input type="submit" class="btn-chat">
+                    </form>
+                </div>
+                <div class="card">
+                    <form method="get">
+                    <?php var_dump($_GET)?>
+                        <label>Delete Account</label>
+                        <input type="checkbox">
+                        <input type="submit"  name= "delete" id="delete" value="Delete" class="btn-chat">
                     </form>
                 </div>
             </div>

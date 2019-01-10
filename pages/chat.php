@@ -24,7 +24,6 @@
                     <div class="header_content max_width">
                         <img src="../images/logo-header.png"/>
                         <ul>
-                            <li><a href="../index.php">Trouver L'amour</a></li>
                             <li><a href="match.php">Matcher avec les Profiles</a></li>
                             <li><a href="personal.php">Mon profil</a></li>
                             <li><a href="logout.php">Deconnexion</a></li>
@@ -36,7 +35,7 @@
         <div class="content">
             <div class="max_width content_message">
                 <div class="chat">
-                    <div class="chatwith">
+                  <!--  <div class="chatwith">
                         <?php while($donnes = $allProfil->fetch(PDO::FETCH_ASSOC)):?>
                             <div class="talk">
                                 <?php if(file_exists("../userImages/ ". $donnes["receiver"] ."/profil.jpg")):?>
@@ -52,7 +51,7 @@
                             </div>
                             <hr/>
                         <?php endwhile?>
-                    </div>
+                    </div>-->
                     <div class="messages">
                         <div class="recent">
                             

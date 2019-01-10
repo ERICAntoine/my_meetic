@@ -134,6 +134,11 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
 {
     background: #fff;
     display: flex;
+    justify-content: center;
+}
+.chat #message
+{
+    width: 80%;
 }
 
 .chatwith
@@ -169,6 +174,8 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
     color: #fff;
     padding: 5px;
     margin-bottom: 10px;
+    width: 100%;
+    border-radius: 12px;
 }
 
 .receiver
@@ -176,6 +183,8 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
     background-color: #faafaa;
     color: #fff;
     padding: 5px;
+    width: 100%;
+    border-radius: 12px;
 }
 
 .talk
