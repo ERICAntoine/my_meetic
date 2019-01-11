@@ -44,7 +44,7 @@ ul
     background: linear-gradient(to top, rgba(250, 176, 173, 0.75) 100%, rgba(250, 176, 173, 0.2));
 }
 
-.header ul
+.header #menu
 {
     display: flex;
     float: right;
@@ -86,7 +86,7 @@ ul
     bottom: 15px;
 }
 
-.header ul::before {
+.header #menu::before {
     content: '';
     display: block;
     position: absolute;
@@ -273,4 +273,22 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
 
 .grid-container--fit {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+#hover
+{
+    display: none;
+    margin-top: 15px;
+    padding: 0;
+}
+
+#menu_profil
+{
+    display: grid;
+}
+
+#hover li
+{
+    padding: 0;
+    margin-top: 10px;
 }

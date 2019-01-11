@@ -23,9 +23,9 @@
                 <div class="header_background">
                     <div class="header_content max_width">
                         <img src="../images/logo-header.png"/>
-                        <ul>
+                        <ul id="menu">
                             <li><a href="match.php">Matcher avec les Profiles</a></li>
-                            <li><a href="personal.php">Mon profil</a></li>
+                            <li id="menu_profil"><a href="personal.php">Mon profil</a></li>
                             <li><a href="logout.php">Deconnexion</a></li>
                         </ul>
                     </div>
@@ -70,5 +70,6 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
     <script src="../assets/js/chat.js"></script>
+    <script src="../assets/js/index.js"></script>
 </body>
 </html>

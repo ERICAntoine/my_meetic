@@ -222,3 +222,21 @@ hr
     border-color: #282c59;
     width: 70%;
 }
+
+#hover
+{
+    display: none;
+    margin-top: 15px;
+    padding: 0;
+}
+
+#menu_profil
+{
+    display: grid;
+}
+
+#hover li
+{
+    padding: 0;
+    margin-top: 10px;
+}

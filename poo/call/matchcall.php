@@ -3,7 +3,7 @@
 
     $match = new MatchProfile($_GET);
 
-    if(empty($_GET) || $_GET["page"])
+    if(empty($_GET) || count($_GET) == 1)
     {
       $users = $match -> selectUsers();
       $nbrPage = $match -> selectUsers(false);

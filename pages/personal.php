@@ -24,9 +24,9 @@
                 <div class="header_background">
                     <div class="header_content max_width">
                         <img src="../images/logo-header.png"/>
-                        <ul>
+                        <ul id="menu">
                             <li><a href="match.php">Matcher avec les Profiles</a></li>
-                            <li><a href="personal.php">Mon profil</a></li>
+                            <li id="menu_profil"><a href="personal.php">Mon profil</a></li>
                             <li><a href="logout.php">Deconnexion</a></li>
                         </ul>
                     </div>
@@ -35,7 +35,7 @@
         </header>
         <div class="content">
             <div class="content_card max_width">
-                <div class="card">
+                <div class="card" id="photo">
                     <?php if(file_exists("../userImages/" . $_SESSION['id'] . '/profil.jpg')):?>
                         <label for="image_upload">
                             <div class="image_card">
@@ -63,7 +63,7 @@
                             <!--<a class="btn-chat" href="chat.php/?id=<?=$_SESSION["id"]?>">Chatter</a>-->
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="change">
                     <form method="post" class="form_change" >
                         <label>Change LastName</label>
                         <input type="text" name="lastname" value=<?= $_SESSION["lastname"]?>>
@@ -82,7 +82,6 @@
                 </div>
                 <div class="card">
                     <form method="get">
-                    <?php var_dump($_GET)?>
                         <label>Delete Account</label>
                         <input type="checkbox">
                         <input type="submit"  name= "delete" id="delete" value="Delete" class="btn-chat">

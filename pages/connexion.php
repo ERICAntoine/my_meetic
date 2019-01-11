@@ -47,7 +47,6 @@
                             <div class="submit">
                                 <input id="submit" name= "submit" type="submit" class="log sub" value="Connecte toi">
                             </div>
-
                         </div>
                     </form>
                 </div>

@@ -245,6 +245,19 @@ img.arrow
     overflow: hidden;
 }
 
+.ui-menu
+{
+    width: min-content;
+    background: #fff;
+    overflow: scroll;
+    height: 108px;
+}
+
+.ui-helper-hidden-accessible
+{
+    display: none;
+}
+
 @media(max-width: 1200px)
 {
     .col-2
@@ -297,4 +310,22 @@ img.arrow
         position: relative;
         left: 45%;
     }
+}
+
+#hover
+{
+    display: none;
+    margin-top: 15px;
+    padding: 0;
+}
+
+#menu_profil
+{
+    display: grid;
+}
+
+#hover li
+{
+    padding: 0;
+    margin-top: 10px;
 }
