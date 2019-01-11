@@ -9,7 +9,7 @@ $city = $_GET["term"];
 
 if(isset($city) && !empty($city))
 {
-    $users = "SELECT MIN(id) as 'id', city FROM users WHERE city LIKE '%". $city ."%' GROUP BY city";
+    $users = "SELECT MIN(id) as 'id', city FROM users WHERE city LIKE '". $city ."%' GROUP BY city";
     $usersResquest = $db -> prepare($users);
     $usersResquest -> execute();
     $cityData = array();

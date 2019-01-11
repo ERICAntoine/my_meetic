@@ -90,6 +90,10 @@
                         </div>
                         <div class="profiles">
                             <div class="flex-row row">
+                            <?php if(empty($u)):?>
+                                    <strong> La recherche n'a trouver personne !</strong>
+                                    <?php return 0;?>
+                            <?php endif ?>
                                 <?php foreach($u as $usersMatch):?>
                                     <div class="grid-element cards">
                                         <div class="card">
