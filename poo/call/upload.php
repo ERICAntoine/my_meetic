@@ -18,6 +18,7 @@
                     $newName = explode(".", $_FILES["image"]["name"]);
                     $new = "profil". '.' . end($newName);
                     move_uploaded_file($tmp, $path. $new);
+                    echo "success";
                 }
                 else
                 {
@@ -25,6 +26,7 @@
                     $newName = explode(".", $_FILES["image"]["name"]);
                     echo $new = "profil". '.' . end($newName);
                     move_uploaded_file($tmp, $path. $new);
+                    echo "success";
                 }
             }
             else

@@ -16,10 +16,9 @@ function postMessage($post)
     $resquest = "INSERT INTO messages (author, receiver, content, create_at) VALUES ($author, $receiver, '$post', NOW())";
     $insertMessage = $db -> prepare($resquest);
     $bool = $insertMessage -> execute();
-
     if($bool)
     {
-        echo "sucess";
+        echo "Success";
     }
     else
     {
@@ -27,7 +26,7 @@ function postMessage($post)
     }
 }
 
-    postMessage($_GET["message"]);
+postMessage($_GET["message"]);
 
 
 ?>

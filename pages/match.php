@@ -131,7 +131,6 @@
                                 <?php if(empty($_GET) || isset($_GET["page"])):?>
                                     <?php for($i = 1; $i < $nbrPage + 1; $i++): ?>
                                     <li class='page-item'><a class='page-link' href= <?= 'match.php?page=' . $i?>><?=$i?></a></li>
-
                                     <?php endfor ?>
                                 <?php endif ?>
                             </ul>
@@ -163,7 +162,7 @@
             url: "https://transit.api.here.com/v3/coverage/search.json?app_id=eXdLlQLK7Vubow3Aa7q6&app_code=LvCW5PkDhPy48Lc5Qy3AxA&name=" + city,
             success: function(response)
             {
-                console.log(response);
+                console.log(response["Res"]["Coverage"]["Cities"]["City"][0]);
             }
         });
 });

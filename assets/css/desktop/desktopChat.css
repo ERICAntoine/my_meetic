@@ -164,7 +164,8 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
 {
     padding: 17px;
     height: 300px;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden
 }
 
 .my
@@ -176,6 +177,7 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
     margin-bottom: 10px;
     width: 100%;
     border-radius: 12px;
+    display: grid;
 }
 
 .receiver
@@ -183,8 +185,11 @@ form input[type=text],input[type=email], input[type=date], select,input[type=pas
     background-color: #faafaa;
     color: #fff;
     padding: 5px;
-    width: 100%;
     border-radius: 12px;
+    margin-bottom: 10px;
+    width: 100%;
+    float: left;
+    display: grid;
 }
 
 .talk
@@ -239,4 +244,13 @@ hr
 {
     padding: 0;
     margin-top: 10px;
+}
+
+.date
+{
+    position: relative;
+    left: 80%;
+    font-style: italic;
+    font-size: 10px;
+    width: fit-content;
 }

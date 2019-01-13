@@ -58,7 +58,7 @@
                         </div>
                         <form id="messager" method="post">
                             <input id="message" type="text">
-                            <input type="submit"> 
+                            <input type="submit" id="submit"> 
                             <input id="receiver" type="hidden" value=<?= $_GET["chatWith"]?>>
                         </form>
                     </div>

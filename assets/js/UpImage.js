@@ -19,7 +19,14 @@ $(document).ready(function(e)
             processData:false,
             success: function response(data)
             {
-                console.log(data);
+                if(data == "success")
+                {
+                    window.location.replace("http://localhost/my_meetic/pages/personal.php");
+                }
+                else
+                {
+                    alert(data);
+                }
             }
         })
     })
