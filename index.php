@@ -86,7 +86,10 @@
                                     </div>
                                     <input name = "email" type="email" class="log" placeholder="Email">
                                     <input name= "birthday" type="date" class="log">
-                                    <input name= "city" type="text" class="log" placeholder="Ville">
+                                    <input list="city" name= "city" type="text" class="log" id="cit" placeholder="Ville">
+                                    <datalist id="city">
+
+                                    </datalist>
                                     <input name= "password" type="password" class="log" placeholder="Mot de Passe">
                                     <div class="submit">
                                         <input id="submit" name= "submit" type="submit" class="log sub" value="Trouver l'amour aujourd'hui">
@@ -140,6 +143,33 @@
             <span>© Copyright 2018 Ericleplusbeau Corporation</span>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
     <script src="assets/js/index.js"></script>
 </body>
 </html>
+
+<script>
+    $(document).ready(function(){
+        $("#cit").keypress(function()
+        {
+            var city = this.value;
+
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                url: "https://transit.api.here.com/v3/coverage/search.json?app_id=eXdLlQLK7Vubow3Aa7q6&app_code=LvCW5PkDhPy48Lc5Qy3AxA&name=" + city,
+                success: function(response)
+                {
+                    var api = response["Res"]["Coverage"]["Cities"]["City"][0]["name"];
+                    $("#city").empty();
+                    $("#city").append("<option value=" + api + "></option>")
+                    console.log(response["Res"]["Coverage"]["Cities"]["City"][0]["name"]);
+                    
+                }
+            });
+        });
+           
+});
+</script>
