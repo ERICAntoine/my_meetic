@@ -1,5 +1,11 @@
 <?php
+    session_start();
     include("poo/call/indexcall.php");
+
+    if(!empty($_SESSION))
+    {
+        header("Location: pages/personal.php");
+    }
     /*require_once "Faker/src/autoload.php";
     $faker = Faker\Factory::create();
     $server = "localhost";
